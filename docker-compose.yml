@@ -1,0 +1,9 @@
+version: "3"
+services:
+  discord-bot:
+    build: .
+    container_name: discord-calendar-bot
+    restart: always
+    env_file: .env  # Loads environment variables from .env
+    volumes:
+      - ./google-service-account.json:/app/google-service-account.json:ro
